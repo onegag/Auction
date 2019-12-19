@@ -1,6 +1,7 @@
 package by.tamkovich.epam.auction;
 
 import by.tamkovich.epam.auction.entity.Auction;
+import by.tamkovich.epam.auction.entity.Bid;
 import by.tamkovich.epam.auction.entity.Lot;
 import by.tamkovich.epam.auction.entity.Participant;
 import by.tamkovich.epam.auction.parser.LotParser;
@@ -29,6 +30,15 @@ public class Main {
         List<Lot> lots = lotParser.readJson(LOTS);
 
         Auction auction = Auction.getInstance();
+        participants.forEach(participant -> auction.addObserver(participant));
+
+        for (Lot currentLot:lots) {
+            Bid bid = new Bid(currentLot);
+
+
+
+        }
+
 
 
     }

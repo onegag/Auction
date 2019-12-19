@@ -4,4 +4,5 @@ import by.tamkovich.epam.auction.entity.Participant;
 
 public interface Decision {
     void make(Participant participant);
+
 }

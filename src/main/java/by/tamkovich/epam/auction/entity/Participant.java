@@ -16,8 +16,19 @@ public class Participant implements Runnable, Observer {
         this.capital = startCapital;
     }
 
+    public Bid getBid() {
+        return bid;
+    }
+
+    public void setBid(Bid bid) {
+        this.bid = bid;
+    }
+
     @Override
     public void run() {
+        while(!bid.timeOut.get()){
+
+        }
 
 
 
@@ -25,7 +36,7 @@ public class Participant implements Runnable, Observer {
     }
 
     @Override
-    public void update() {
+    public void update(Bid bid) {
         AtomicLong currentPrice = bid.getCurrentPrice();
         AtomicInteger step = bid.getStep();
 
